@@ -1,0 +1,12 @@
+# Survey
+
+The survey plugin allows the site admin to produce any sort of form for their e107 system.
+
+## Further Information
+
+Until I can fully port the survey_readme.txt file over to this file, you should look at that file for more information.
+
+## Credits
+
+This plugin was originally authored by McFly. A few fixes were added by congkai.
+Due to an open exploit -- I have taken over this until one of the previous two authors wish to take it back over.
