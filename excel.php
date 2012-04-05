@@ -9,7 +9,7 @@
 */
 require_once("../../class2.php");
 require_once(e_HANDLER."userclass_class.php");
-@include_once(e_PLUGIN."survey/languages/".e_LANGUAGE.".php");
+include_lan(e_PLUGIN."survey/languages/".e_LANGUAGE.".php");
 
 function survey_search($resp,$stext){
 	global $survey_fields;

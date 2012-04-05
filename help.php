@@ -1,6 +1,5 @@
 <?php
-@include_once(e_PLUGIN."survey/languages/admin/".e_LANGUAGE.".php");
-@include_once(e_PLUGIN."survey/languages/admin/English.php");
+include_lan(e_PLUGIN."survey/languages/".e_LANGUAGE.".php");
 
 $text = "
 <b>&raquo;</b> <u>".ADLAN_SUR10."</u>

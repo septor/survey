@@ -13,10 +13,7 @@ require_once(e_HANDLER."userclass_class.php");
 require_once(e_HANDLER."form_handler.php");
 require_once(e_HANDLER."np_class.php");
 require_once(e_PLUGIN."survey/survey.inc.php");
-@include_once(e_PLUGIN."survey/languages/".e_LANGUAGE.".php");
-@include_once(e_PLUGIN."survey/languages/English.php");
-echo "<script type='text/javascript' src='".e_PLUGIN."survey/survey_cal.js'></script>";
-echo "<link rel='stylesheet' href='".e_PLUGIN."survey/survey_cal.css' />";
+include_lan(e_PLUGIN."survey/languages/".e_LANGUAGE.".php");
 
 function np($url, $from, $view, $total, $td, $qs="")
 {

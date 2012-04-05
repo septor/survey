@@ -10,9 +10,7 @@
 */
 require_once("../../class2.php");
 require_once(e_HANDLER."userclass_class.php");
-
-@include_once(e_PLUGIN."survey/languages/".e_LANGUAGE.".php");
-@include_once(e_PLUGIN."survey/languages/English.php");
+include_lan(e_PLUGIN."survey/languages/".e_LANGUAGE.".php");
 
 require_once(HEADERF);
 $arg=explode(".",e_QUERY);
@@ -79,9 +77,9 @@ if($numresults)
 				case(3):  //checkbox
 				$choices=explode(",",$sf['field_choices']);
 				$text .= "<table style='width:100%'>";
-				foreach($_res as $_res)
+				foreach($_res as $_rs)
 				{
-					$r=unserialize($_res['results_results']);
+					$r=unserialize($_rs['results_results']);
 					$rr=unserialize($r[$fn]);
 					foreach($choices as $choice)
 					{
@@ -110,16 +108,16 @@ if($numresults)
 				case(5):  //dropdown
 				$choices=explode(",",$sf['field_choices']);
 				$text .= "<table style='width:100%'>";
-				foreach($choices as $c){
+				foreach($choices as $choice){
 					$cnt=0;
 					foreach($_res as $_r){
 						$r=unserialize($_r['results_results']);
-						if(trim($r[$fn])==trim($c)){
+						if(trim($r[$fn])==trim($choice)){
 							$cnt++;
 						}
 					}
 					$per=sprintf("%.1f",$cnt/$numresults*100);
-					$text .= "<tr><td style='width:40%'>{$c}</td><td style='width:35%; text-align:right;'>{$cnt}</td></td><td style='width:25%; text-align:right;'>{$per}%</td></tr>";
+					$text .= "<tr><td style='width:40%'>{$choice}</td><td style='width:35%; text-align:right;'>{$cnt}</td></td><td style='width:25%; text-align:right;'>{$per}%</td></tr>";
 				}
 				$text .= "</table>";
 				$text .= "</td></tr>";

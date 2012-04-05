@@ -13,8 +13,7 @@ if(!getperms("P")){header("location:".e_BASE."index.php"); exit; }
 require_once(e_ADMIN."auth.php");
 require_once(e_HANDLER."form_handler.php");
 require_once(e_HANDLER."userclass_class.php");
-@include_once(e_PLUGIN."survey/languages/admin/".e_LANGUAGE.".php");
-@include_once(e_PLUGIN."survey/languages/admin/English.php");
+include_lan(e_PLUGIN."survey/languages/".e_LANGUAGE.".php");
 
 foreach($_POST as $k => $v){
 	if(preg_match("/down_(\d*?)_x/",$k,$matches)){

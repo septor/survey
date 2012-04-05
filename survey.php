@@ -12,13 +12,7 @@ require_once("../../class2.php");
 require_once(e_HANDLER."userclass_class.php");
 require_once(e_HANDLER."np_class.php");
 require_once(e_PLUGIN."survey/survey.inc.php");
-
-@include_once(e_PLUGIN."survey/languages/".e_LANGUAGE.".php");
-@include_once(e_PLUGIN."survey/languages/English.php");
-
-
-
-
+include_lan(e_PLUGIN."survey/languages/".e_LANGUAGE.".php");
 
 function np($url, $from, $view, $total, $td, $qs=""){
 		/*
@@ -309,6 +303,7 @@ if($_POST['submit']){
 				$mailtext .="{$parm['field_text']}: ".implode(", ",$v)." \n";
 				break; 
 			case (6): //separator
+				$mailtext .="{$parm['field_text']} \n";
 			case (12): //emailto
 				break;
 			default:
@@ -378,8 +373,7 @@ if($_POST['submit']){
 	require_once(FOOTERF);
 	exit;
 }
-echo "<script type='text/javascript' src='".e_PLUGIN."survey/survey_cal.js'></script>";
-echo "<link rel='stylesheet' href='".e_PLUGIN."survey/survey_cal.css' />";
+
 show_survey($arg[0]);
 require_once(FOOTERF);
 ?>

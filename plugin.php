@@ -11,14 +11,14 @@
 
 // Plugin info -------------------------------------------------------------------------------------------------------
 $eplug_name = "Survey";
-$eplug_version = "0.48";
+$eplug_version = "0.4.9";
 $eplug_author = "McFly (maintained by septor)";
 $eplug_logo = "/images/survey_icon.png";
 $eplug_url = "http://painswitch.com/";
 $eplug_email = "patrickweaver@gmail.com";
 $eplug_description = "This plugin is designed to allow the site admin to configure surveys for his / her site.";
 $eplug_compatible = "e107 v1.0+";
-$eplug_readme = "survey_readme.txt";	// leave blank if no readme file
+$eplug_readme = "README.mkd";	// leave blank if no readme file
 
 // Name of the plugin's folder -------------------------------------------------------------------------------------
 $eplug_folder = "survey";
@@ -27,7 +27,7 @@ $eplug_folder = "survey";
 $eplug_menu_name = "";
 
 // Name of the admin configuration file --------------------------------------------------------------------------
-$eplug_conffile = "admin_survey_config.php";
+$eplug_conffile = "admin_config.php";
 
 // Icon image and caption text ------------------------------------------------------------------------------------
 $eplug_icon = $eplug_folder."/images/survey_icon.png";

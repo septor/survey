@@ -2,9 +2,31 @@
 
 The survey plugin allows the site admin to produce any sort of form for their e107 system.
 
-## Further Information
+The results of these surveys can be placed in any or all of three places:
+* email    - It will be emailed to the entered email address(es).
+* database - The results will all be stored in the database so that you can view statistical data later.
+* forum    - The results can be entered as a new thread in a selected forum topic.
 
-Until I can fully port the survey_readme.txt file over to this file, you should look at that file for more information.
+If the survey is restricted to a userclass or members only, you can then prevent the users from entering results into the survey more than once.  The tracking of users that have filled out the survey is stored independantly of of the results.  This means that the admin can not know exactly what users fill out specific data.  Also, the email that is sent does not reflect any user data.
+
+## Templating
+
+When designing a form, the config screen will now show you what each field number is.  These field numbers are very important when creating your template.  The template will be your "Survey message" on the config screen.  The system will automatically detect whether that is a simple message or a template.
+
+You simply enter straight HTML code into the survey message field.  When you would like the field question to appear, you would enter the code `{Q=#)` #=field number.  To show the form options for the question, enter the code `{F=#}`.
+
+The `{x=#}` code must appear on a line by itself.
+
+Example:
+
+	<table>
+	<tr><td colspan='2' style='color:blue;'>Please fill out my survey</td></tr>
+	<tr><td>
+	{Q=1}
+	</td><td>
+	{F=1}
+	</td></tr>
+	</table>
 
 ## Credits
 
