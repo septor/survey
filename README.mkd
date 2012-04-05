@@ -3,6 +3,7 @@
 The survey plugin allows the site admin to produce any sort of form for their e107 system.
 
 The results of these surveys can be placed in any or all of three places:
+
 * email    - It will be emailed to the entered email address(es).
 * database - The results will all be stored in the database so that you can view statistical data later.
 * forum    - The results can be entered as a new thread in a selected forum topic.
