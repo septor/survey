@@ -218,7 +218,7 @@ if($_POST['create'] || $_POST['edit']){
 		$survey_save_results=0;
 	}
 	if($_POST['edit']){
-		$sql -> db_Select("survey","*","survey_id = '{$_POST['existing']}' ");
+		$sql -> db_Select("survey","*","survey_id =".intval($_POST['existing']));
 		$row = $sql -> db_Fetch();
 		extract($row);
 	}
