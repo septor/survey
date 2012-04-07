@@ -227,7 +227,7 @@ if($_POST['create'] || $_POST['edit']){
 	<table class='fborder' style='width:95%'>";
 	$fnum=0;
 	if($_POST['edit']){
-		$survey_url=preg_replace("/_config/","",e_SELF)."?{$_POST['existing']}";
+		$survey_url = preg_replace("/_config/", "", SITEURLBASE.e_PLUGIN_ABS."survey/")."survey.php?{$_POST['existing']}";
 		$text .= "<tr><td colspan='4' class='forumheader' style='text-align:center'>".ADLAN_SUR28." <a class='smalltext' href='{$survey_url}'>{$survey_url}</a></td></tr>";
 		$text .= "<tr><td colspan='4'>
 			<div class='spacer'>
