@@ -11,7 +11,7 @@
 
 // Plugin info -------------------------------------------------------------------------------------------------------
 $eplug_name = "Survey";
-$eplug_version = "0.4.9";
+$eplug_version = "0.4.10";
 $eplug_author = "McFly (maintained by septor)";
 $eplug_logo = "/images/survey_icon.png";
 $eplug_url = "http://painswitch.com/";
