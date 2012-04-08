@@ -14,7 +14,7 @@ The results of these surveys can be placed in any or all of three places:
 * database - The results will all be stored in the database so that you can view statistical data later.
 * forum    - The results can be entered as a new thread in a selected forum topic.
 
-If the survey is restricted to a userclass or members only, you can then prevent the users from entering results into the survey more than once.  The tracking of users that have filled out the survey is stored independently of of the results.  This means that the admin can not know exactly what users fill out specific data.  Also, the email that is sent does not reflect any user data.
+If the survey is restricted to a userclass or members only, you can then prevent the users from entering results into the survey more than once.  The tracking of users that have filled out the survey is stored independently of the results.  This means that the admin can not know exactly what users fill out specific data.  Also, the email that is sent does not reflect any user data.
 
 ## Templating
 
