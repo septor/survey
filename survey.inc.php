@@ -131,11 +131,11 @@ function show_form_field($field)
 					break;
 					case 10:  //email
 					list($size,$maxlength)=explode(",",$field['field_choices']);
-					if($survey_class){
-						$ret .= $frm -> form_hidden("results[{$fn}]",USEREMAIL).USEREMAIL;
-						} else {
+					//if($survey_class){
+						//$ret .= $frm -> form_hidden("results[{$fn}]",USEREMAIL).USEREMAIL;
+						//} else {
 							$ret .= $frm -> form_text("results[{$fn}]",$size,$_res[$fn],$maxlength);
-						}
+						//}
 						break;
 						case 11:  // number
 						case 12:	 //emailto
