@@ -61,14 +61,14 @@ survey_message text NOT NULL,
 survey_submit_message text NOT NULL,
 survey_lastfnum int(10) unsigned NOT NULL default '0',
 PRIMARY KEY  (survey_id)
-) TYPE=MyISAM;",
+) ENGINE=MyISAM;",
 "CREATE TABLE ".MPREFIX."survey_results (
 results_id int(10) unsigned NOT NULL auto_increment,
 results_datestamp int(10) unsigned NOT NULL default '0',
 results_survey_id int(10) unsigned NOT NULL default '0',
 results_results text,
 PRIMARY KEY  (results_id)
-) TYPE=MyISAM;");
+) ENGINE=MyISAM;");
 
 
 // Create a link in main menu (yes=TRUE, no=FALSE) -------------------------------------------------------------
