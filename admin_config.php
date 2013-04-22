@@ -49,8 +49,6 @@ class myform extends form {
 	}
 }
 
-$tt=new textparse;
-
 if($_POST['delete']){
 	if($_POST['tick']){
 		$sql -> db_Delete("survey","survey_id='{$_POST['existing']}' ");
@@ -107,12 +105,12 @@ if($_POST['update'] || isset($moveup) || isset($movedown)){
 	foreach($_POST['field_type'] as $key => $val){
 		if($_POST['field_text'][$key]){
 //			echo "[".$_POST['field_number'][$key]."]";
-			$fields[$i]['field_number']=$_POST['field_number'][$key];
-			$fields[$i]['field_text']=$tt -> formtpa($_POST['field_text'][$key]);
-			$fields[$i]['field_req']=$tt -> formtpa($_POST['field_req'][$key]);
-			$fields[$i]['field_hidden']=$tt -> formtpa($_POST['field_hidden'][$key]);
-			$fields[$i]['field_type']=$tt -> formtpa($_POST['field_type'][$key]);
-			$fields[$i]['field_choices']=$tt -> formtpa($_POST['field_choices'][$key]);
+			$fields[$i]['field_number']	=	$_POST['field_number'][$key];
+			$fields[$i]['field_text']	= 	$tp->toDB($_POST['field_text'][$key]);
+			$fields[$i]['field_req']	=	$tp->toDB($_POST['field_req'][$key]);
+			$fields[$i]['field_hidden']	=	$tp->toDB($_POST['field_hidden'][$key]);
+			$fields[$i]['field_type']	=	$tp->toDB($_POST['field_type'][$key]);
+			$fields[$i]['field_choices']	=	$tp->toDB($_POST['field_choices'][$key]);
 			$i++;
 		}
 	}
