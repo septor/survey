@@ -40,9 +40,8 @@ function show_form_question($field)
 
 function show_form_field($field)
 {
-	global $sql, $ns, $tell_required,$_res,$survey_class,$style;
+	global $sql, $ns, $tp, $tell_required,$_res,$survey_class,$style;
 	$frm = new myform;
-	$tt = new textparse;
 	$fn = $field['field_number'];
 	switch($field['field_type'])
 	{
@@ -88,12 +87,12 @@ function show_form_field($field)
 			if($options[1] != ""){$style=$options[1];}
 			ob_end_flush();
 			ob_start();
-			$ns -> tablerender($tt -> tpa($field['field_text']),"");
+			$ns -> tablerender($tp->toHTML($field['field_text']),"");
 			$ret .= ob_get_contents();
 			ob_end_clean();
 			$style=$oldstyle;
 			} else {
-				$ret .= $tt -> tpa($field['field_text']);
+				$ret .= $tp->toHTML($field['field_text']);
 			}
 			break;
 			case 7:  //date
