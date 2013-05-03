@@ -40,7 +40,7 @@ function show_form_question($field)
 
 function show_form_field($field)
 {
-	global $sql, $ns, $tell_required,$_res,$survey_class,$style;
+	global $sql, $ns, $tp, $tell_required,$_res,$survey_class,$style;
 	$frm = new myform;
 	$fn = $field['field_number'];
 	switch($field['field_type'])
@@ -92,7 +92,7 @@ function show_form_field($field)
 			ob_end_clean();
 			$style=$oldstyle;
 			} else {
-				$ret .= $tt -> tpa($field['field_text']);
+				$ret .= $tp->toHTML($field['field_text']);
 			}
 			break;
 			case 7:  //date

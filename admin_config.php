@@ -180,7 +180,7 @@ function survey_existing_dropdown($name,$cur_survey){
 $f=new myform;
 $text = "<div style='text-align:center'>".
 $f -> form_open("POST",e_SELF)."
-<table class='fborder' style='width:95%'><tr><td class='forumheader3' style='text-align:center;'>".ADLAN_SUR9.": ";
+<table class='table fborder' style='width:95%'><tr><td class='forumheader3' style='text-align:center;'>".ADLAN_SUR9.": ";
 
 $survey_dropdown = survey_existing_dropdown("existing",$_POST['existing']);
 
@@ -279,7 +279,7 @@ if($_POST['create'] || $_POST['edit']){
 		$text .= "</td></tr>";
 		$text .= "</td></tr></table></span></div></td></tr>";
 		$text .= "<tr><td colspan='4'>";
-		$text .= "<table>";
+		$text .= "<table class='table'>";
 		$text .= "<tr><td class='fcaption'>&nbsp;</td>";
 		$text .= "<td class='fcaption'>".ADLAN_SUR22."</td>";
 		$text .= "<td class='fcaption'>".ADLAN_SUR23."</td>";
