@@ -321,19 +321,39 @@ if($_POST['submit']){
 	{
 		require_once(e_PLUGIN."forum/forum_class.php");
 		$survey_forum = new e107forum;
-		if(USER==TRUE)
+		$postInfo = array();
+		$threadInfo = array();
+
+		if (USER)
 		{
-			$poster['post_userid'] = USERID;
-			$poster['post_user_name'] = USERNAME;
-			
+			$postInfo['post_user'] = USERID;
+			$threadInfo['thread_lastuser'] = USERID;
+			$threadInfo['thread_user'] = USERID;
+			$threadInfo['thread_lastuser_anon'] = '';
 		}
 		else
 		{
-			$poster['post_userid'] = 0;
-			$poster['post_user_name'] = 'Anonymous';
+			$postInfo['post_user_anon'] = $_POST['anonname'];
+			$threadInfo['thread_lastuser_anon'] = $_POST['anonname'];
+			$threadInfo['thread_user_anon'] = $_POST['anonname'];
 		}
-		$thread_text = $tp->toDB($mailtext);
-		$survey_forum->thread_insert($row['survey_name'], $thread_text, $row['survey_forum'], 0, $poster, 1, 0);
+
+		$postInfo['post_ip'] = e107::getIPHandler()->getIP(FALSE);
+
+		$time = time();
+
+		$postInfo['post_entry'] = $tp->toDB($mailtext);
+		$postInfo['post_forum'] = $forumId;
+		$postInfo['post_datestamp'] = $time;
+		$threadInfo['thread_lastpost'] = $time;
+		$threadInfo['thread_sticky'] = 0;
+		$threadInfo['thread_name'] = $row['survey_name'];
+		$threadInfo['thread_forum_id'] = $row['survey_forum'];
+		$threadInfo['thread_active'] = 1;
+		$threadInfo['thread_datestamp'] = $time;
+		$threadInfo['thread_options'] = '';
+
+		$survey_forum->threadAdd($threadInfo, $postInfo);
 	}
 
 	if($survey_mailto)
