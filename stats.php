@@ -1,21 +1,13 @@
 <?php
-/*
-+---------------------------------------------------------------+
-|	e107 website system
-|	stats.php
-|
-|	Released under the terms and conditions of the
-|	GNU General Public License (http://gnu.org).
-+---------------------------------------------------------------+
-*/
+
 require_once("../../class2.php");
 require_once(e_HANDLER."userclass_class.php");
-include_lan(e_PLUGIN."survey/languages/".e_LANGUAGE.".php");
+e107::lan('survey');
 
 require_once(HEADERF);
-$arg=explode(".",e_QUERY);
+$arg = explode(".",e_QUERY);
 
-$found_recs=array();
+$found_recs = array();
 global $survey_fields;
 $sql -> db_Select("survey","*","survey_id='{$arg[0]}' ");
 

@@ -12,7 +12,7 @@ require_once("../../class2.php");
 require_once(e_HANDLER."userclass_class.php");
 require_once(e_HANDLER."np_class.php");
 require_once(e_PLUGIN."survey/survey.inc.php");
-include_lan(e_PLUGIN."survey/languages/".e_LANGUAGE.".php");
+e107::lan('survey');
 
 function np($url, $from, $view, $total, $td, $qs=""){
 		/*
@@ -26,9 +26,7 @@ function np($url, $from, $view, $total, $td, $qs=""){
 		# - return				null
 		# - scope					public
 		*/
-  if($total == 0){
-   return;
-  }
+  if($total == 0){ return; }
 
 
 

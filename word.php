@@ -10,7 +10,7 @@
 */
 require_once("../../class2.php");
 require_once(e_HANDLER."userclass_class.php");
-include_lan(e_PLUGIN."survey/languages/".e_LANGUAGE.".php");
+e107::lan('survey');
 
 function survey_search($resp,$stext)
 {

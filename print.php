@@ -13,7 +13,7 @@ require_once(e_HANDLER."userclass_class.php");
 require_once(e_HANDLER."form_handler.php");
 require_once(e_HANDLER."np_class.php");
 require_once(e_PLUGIN."survey/survey.inc.php");
-include_lan(e_PLUGIN."survey/languages/".e_LANGUAGE.".php");
+e107::lan('survey');
 
 echo "<link rel='stylesheet' href='".THEME."style.css'>";
 

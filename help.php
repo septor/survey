@@ -1,5 +1,5 @@
 <?php
-include_lan(e_PLUGIN."survey/languages/".e_LANGUAGE.".php");
+e107::lan('survey', true);
 
 $text = "
 <b>&raquo;</b> <u>".ADLAN_SUR10."</u>

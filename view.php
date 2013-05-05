@@ -13,7 +13,7 @@ require_once(e_HANDLER."userclass_class.php");
 require_once(e_HANDLER."form_handler.php");
 require_once(e_HANDLER."np_class.php");
 require_once(e_PLUGIN."survey/survey.inc.php");
-include_lan(e_PLUGIN."survey/languages/".e_LANGUAGE.".php");
+e107::lan('survey');
 
 function np($url, $from, $view, $total, $td, $qs="")
 {
@@ -409,8 +409,8 @@ if($numresults)
 			$opts .= ".list";
 		}
 		$text .= "
-		<tr><td colspan='2'><a href='word.php?".$survey_id."'><img src='images/word.gif' alt='".LAN_SUR100."' title='".LAN_SUR100."' width='32' height='32' border='0'></a>
-		<a href='excel.php?".$survey_id."'><img src='images/excel.gif' title='".LAN_SUR101."' alt='".LAN_SUR101."' width='32' height='32' border='0'></a>
+		<tr><td colspan='2'><a href='word.php?".$survey_id."'><img src='images/Word.png' alt='".LAN_SUR100."' title='".LAN_SUR100."' width='32' height='32' border='0'></a>
+		<a href='excel.php?".$survey_id."'><img src='images/Excel.png' title='".LAN_SUR101."' alt='".LAN_SUR101."' width='32' height='32' border='0'></a>
 		<a href=\"javascript:open_window('view.php?{$survey_id}.{$search_text}.{$selected_rec}{$opts}')\"><img src='images/print.png' alt='".LAN_SUR35."' title='".LAN_SUR34."' width='32' height='32' border='0'></a></td></tr>
 
 		</td></tr>
