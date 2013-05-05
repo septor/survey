@@ -4,6 +4,18 @@
 
 You don't need to worry about your database tables or any previously created surveys, they will remain intact and unharmed!
 
+**If you are attempting to use this plugin with the 2.0 branch of e107 you will need to grab the following files directly from the repo until a new version is released:**
+
+* [admin_config.php](https://raw.github.com/septor/survey/master/admin_cofig.php)
+* [e_meta.php](https://raw.github.com/septor/survey/master/e_meta.php)
+* [survey.js](https://raw.github.com/septor/survey/master/survey.js)
+* [survey.php](https://raw.github.com/septor/survey/master/survey.php)
+* [survey.inc.php](https://raw.github.com/septor/survey/master/survey.inc.php)
+
+Also, this plugin is due for a gigantic overhaul in order to utilize some 2.0 functionality. If you have a suggestion, request, or annoyance that you'd like changed now is the time to get it in by [creating a new issue](https://github.com/septor/survey/issues/new) and bringing it to my attention.
+
+Finally, the language structure for the 2.0 branch has changed. I'll be updating the English lan file and attempting to copy over what I can from the other lan files. If you can assist with this feel free to send me a [PM](http://e107.org/e107_plugins/pm/pm.php?send.37).
+
 # Survey
 
 The survey plugin allows the site admin to produce any sort of form for their e107 system.
