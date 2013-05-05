@@ -229,8 +229,8 @@ if($_POST['create'] || $_POST['edit']){
 		$text .= "<tr><td colspan='4' class='forumheader' style='text-align:center'>".ADLAN_SUR28." <a class='smalltext' href='{$survey_url}'>{$survey_url}</a></td></tr>";
 		$text .= "<tr><td colspan='4'>
 			<div class='spacer'>
-			<div class='fcaption' style='text-align: center; width:100%; cursor: pointer; cursor: hand' onClick='expandit(this);' >&raquo;&raquo; ".ADLAN_SUR69." &laquo;&laquo;</div>
-			<span style='display:none' style=&{head}; id='mainconfig'><br />";
+			<div class='fcaption showSurveys' style='text-align: center; width:100%; cursor: pointer; cursor: hand' >&raquo;&raquo; ".ADLAN_SUR69." &laquo;&laquo;</div>
+			<span style='display:none' style=&{head}; class='mainconfig'><br />";
 		$text .= "<table style='width:100%'><tr><td>";
 	}
 	if($_POST['create']){
