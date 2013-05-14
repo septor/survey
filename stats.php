@@ -2,7 +2,7 @@
 
 require_once("../../class2.php");
 require_once(e_HANDLER."userclass_class.php");
-e107::lan('survey');
+e107::plugLan('survey', e_LANGUAGE.'_front');
 
 require_once(HEADERF);
 $arg = explode(".",e_QUERY);

@@ -13,7 +13,7 @@ require_once(e_HANDLER."userclass_class.php");
 require_once(e_HANDLER."form_handler.php");
 require_once(e_HANDLER."np_class.php");
 require_once(e_PLUGIN."survey/survey.inc.php");
-e107::lan('survey');
+e107::plugLan('survey', e_LANGUAGE.'_front');
 
 function np($url, $from, $view, $total, $td, $qs="")
 {

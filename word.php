@@ -1,16 +1,7 @@
 <?php
-/*
-+---------------------------------------------------------------+
-|	e107 website system
-|	word.php
-|
-|	Released under the terms and conditions of the
-|	GNU General Public License (http://gnu.org).
-+---------------------------------------------------------------+
-*/
+
 require_once("../../class2.php");
 require_once(e_HANDLER."userclass_class.php");
-e107::lan('survey');
 
 function survey_search($resp,$stext)
 {
