@@ -259,7 +259,7 @@ function field_calc($sf)
 		$str=str_replace("{".$matches[1]."}",$val,$str);
 		$i++;
 	}
-	eval("\$total = ".$str.";");
+	eval("\$total = \"$str\";");
 	return $total;
 }
 $arg=explode(".",e_QUERY);
