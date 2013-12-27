@@ -109,6 +109,38 @@ function parse_survey_message($message){
 	return $ret;
 }
 
+function isImage($url)
+{
+	$params = array('http' => array(
+		'method' => 'HEAD'
+	));
+	$ctx = stream_context_create($params);
+	$fp = @fopen($url, 'rb', false, $ctx);
+	if (!$fp) 
+		return false;  // Problem with url
+
+	$meta = stream_get_meta_data($fp);
+	if ($meta === false)
+	{
+		fclose($fp);
+		return false;  // Problem reading data from url
+	}
+
+	$wrapper_data = $meta["wrapper_data"];
+	if(is_array($wrapper_data)){
+		foreach(array_keys($wrapper_data) as $hh){
+			if (substr($wrapper_data[$hh], 0, 19) == "Content-Type: image") // strlen("Content-Type: image") == 19 
+			{
+				fclose($fp);
+				return true;
+			}
+		}
+	}
+
+	fclose($fp);
+	return false;
+}
+
 function show_survey($snum)
 {
 	global $sql, $ns, $tell_required, $_res, $fdata, $survey_class, $tp;
@@ -339,6 +371,29 @@ if($_POST['submit']){
 		$postInfo['post_ip'] = e107::getIPHandler()->getIP(FALSE);
 
 		$time = time();
+
+
+		// START -- experimental image display code
+
+		$newMailText = array();
+		$checkLinks = explode(" ", $mailtext);
+
+		foreach($checkLinks as $convertLink)
+		{
+			if(preg_match("/\bhttp\b/i", $convertLink))
+			{
+				if(isImage($convertLink))
+				{
+					$convertLink = "<img src='".$convertLink."' />";
+				}
+			}
+
+			array_push($newMailText, $convertLink);
+		}
+
+		$mailtext = implode(" ", $newMailText);
+
+		// END -- experimental image display code
 
 		$postInfo['post_entry'] = $tp->toDB($mailtext);
 		$postInfo['post_forum'] = $forumId;
