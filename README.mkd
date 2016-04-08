@@ -1,3 +1,5 @@
+**Notice: This plugin is no longer maintained. If you would like to take it over, just fork it and notify me so I can include your repo URL in this README file. Issues will not be commented on and nothing will be fixed from this point forward. I am leaving this repo up for anyone wanting to reference the code.**
+
 # NOTE
 
 **If you are upgrading from 0.47 or earlier you *need* to remove your existing files before you upload the new version's files.**
